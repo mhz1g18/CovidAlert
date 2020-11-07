@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row pb-4">
+        <h3> Venues </h3>
+        <button class="btn btn-primary ml-auto" ui-sref="venuescreate"> Create </button>
+    </div>
+    <div class="row">
+        <div class=" ml-auto">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ng-model="$ctrl.searchVenues">
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table ">
+            <thead class="thead-light ">
+                <th>Name</th>
+                <th>Checkins</th>
+                <th></th>
+            </thead>
+            <tbody ng-repeat="venue in $ctrl.venues | filter: $ctrl.searchVenues">
+                <td> {{venue.name}} </td>
+                <td> {{venue.checkins == null ? 0 : venue.checkins}} </td>
+                <td>
+                    <a class="icon action"  data-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path></svg></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <a class="dropdown-item" ui-sref="createcheckin({venue: venue})" >Checkin</a>
+                        <a class="dropdown-item" ui-sref="checkins  ({venue: venue})" >List Checkins</a>
+                        <a class="dropdown-item" ui-sref="venuesedit({id: venue.RowKey})" >Edit</a>
+                        <a class="dropdown-item text-danger " ng-click="$ctrl.deleteVenue(venue.RowKey, $index)" >Delete</a>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container mt-5  ">
+    <div class="row pb-4 ">
+            <h3> Notifications </h3>
+            <!-- <button class="btn btn-primary ml-auto"> Create </button> -->
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-light ">
+                <th>User Notified</th>
+                <th>User Infected</th>
+                <th>Venue</th>
+                <th>Date Issued</th>
+            </thead>
+            <tbody ng-repeat="notification in $ctrl.notifications">
+                <td> {{notification.userNotified}} </td>
+                <td>{{ notification.infectedUser}} </td>
+                <td> {{notification.venue }}</td>
+                <td> {{notification.Timestamp | date:'medium'}} </td>
+                <!-- <td>
+                    <a class="icon action"  data-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path></svg></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <div class="dropdown-divider"></div> 
+                        <a class="dropdown-item " >Edit</a>
+                        <a class="dropdown-item text-danger " >Delete</a>
+                    </div>
+                </td> -->
+            </tbody>
+            
+        </table>
+    </div>
+</div>

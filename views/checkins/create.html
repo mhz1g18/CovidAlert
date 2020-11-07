@@ -1,0 +1,44 @@
+<script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+<div class="container mt-5">
+    <div class="row pb-4 justify-content-center">
+        <div class="card w-50">
+            <div class="card-header">
+              Checkin User - {{$ctrl.user.name}}
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="userSelect">User</label>
+                    </div>
+                        <select class="custom-select" id="userSelect" ng-model="$ctrl.selectedUser" ng-options="(u.name + ' ' + u.surname) for u in $ctrl.users 
+                                                                                                                track by u.RowKey">
+                    </select>
+                  </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="venueSelect">Venue</label>
+                    </div>
+                    <select class="custom-select" id="venueSelect" ng-model="$ctrl.selectedVenue" ng-options="venue.name for venue in $ctrl.venues track by venue.RowKey">
+                      <!-- <option ng-repeat="venue in $ctrl.venues">{{venue.name}}</option> -->
+                    </select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <input type="text" class="form-control" id="datepicker" ng-model="$ctrl.selectedDate" placeholder="Date">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <input type="text" class="form-control" ng-model="$ctrl.time"
+                    aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="HOUR:MINUTES">
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary" ng-click="$ctrl.createCheckin()">Submit</button>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
