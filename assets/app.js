@@ -15,6 +15,9 @@ covidTracker.config(function($stateProvider, $urlRouterProvider, $httpProvider) 
     $urlRouterProvider.otherwise('/index');
 
     // Define App States
+    // Each state has an URL 
+    // Each state has a template html file
+    // Each state has a controller
 
     $stateProvider
 
