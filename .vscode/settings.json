@@ -1,0 +1,7 @@
+{
+    "staticWebApps.appSubpath": "/",
+    "staticWebApps.apiSubpath": "",
+    "staticWebApps.appArtifactSubpath": "build",
+    "appService.defaultWebAppToDeploy": "/subscriptions/5531844c-6bf3-40f6-9850-9368c19930d8/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/milkocovidalert",
+    "appService.deploySubpath": "."
+}

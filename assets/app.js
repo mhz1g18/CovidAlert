@@ -118,6 +118,7 @@ covidTracker.config(function($stateProvider, $urlRouterProvider, $httpProvider) 
 
     .state('notifications', {
         url: '/notifications', 
+        params: {userId: null},
         templateUrl: './views/notifications/listview.html',
         controller: 'NotificationsCtrl',
         controllerAs: '$ctrl'

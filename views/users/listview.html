@@ -33,6 +33,7 @@
                         <a class="dropdown-item" ui-sref="createcheckin({user: user})" >Checkin</a>
                         <a class="dropdown-item" ng-click="$ctrl.changeStatus(user, $index)" >{{user.infected ? 'Mark Negative' : 'Mark Positive'}}</a>
                         <a class="dropdown-item" ui-sref="checkins({user: user})" >List Checkins</a>
+                        <a class="dropdown-item" ui-sref="notifications({userId : user.RowKey})" >List Notifications</a>
                         <a class="dropdown-item" ui-sref="usersedit({id: user.RowKey})" >Edit</a>
                         <a class="dropdown-item text-danger " ng-click="$ctrl.deleteUser(user.RowKey, $index)" >Delete</a>
                     </div>

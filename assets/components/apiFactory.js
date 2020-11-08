@@ -250,12 +250,15 @@ app.factory('APIFactory', function($http, $q) {
          * Retreive all notification entities
          */
         
-        getNotifications : function() {
+        getNotifications : function(id = false) {
             
+            let endpoint = id ? _notificationsEndpoint + id : _notificationsEndpoint;
+            console.log(endpoint);
+
             let deferred = $q.defer();
             let promise = deferred.promise;
 
-            $http.get(_notificationsEndpoint)
+            $http.get(endpoint)
                 .then(result => deferred.resolve(result));
 
             return promise;
