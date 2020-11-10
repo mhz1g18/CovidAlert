@@ -248,6 +248,8 @@ app.factory('APIFactory', function($http, $q) {
 
         /**
          * Retreive all notification entities
+         * 
+         * @param {String} id User RowKey in case notifications generated because of specific user need to be fetched
          */
         
         getNotifications : function(id = false) {

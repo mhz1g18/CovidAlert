@@ -23,6 +23,7 @@ covidTracker.config(function($stateProvider, $urlRouterProvider, $httpProvider) 
 
     .state('index', {
         url: '/index',
+        name: 'indexpage',
         templateUrl: './views/index.html'
     })
 
@@ -126,3 +127,9 @@ covidTracker.config(function($stateProvider, $urlRouterProvider, $httpProvider) 
 
 });
 
+// Nav Controller
+
+covidTracker.controller('NavCtrl', function($state) {
+    console.log('heryyy')
+    console.log($state.getCurrentPath());
+})
